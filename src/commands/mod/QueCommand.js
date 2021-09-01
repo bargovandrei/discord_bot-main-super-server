@@ -59,7 +59,7 @@ module.exports = class QueCommand extends BaseCommand {
       message.channel.send("Que length: " + argument)
     }
 
-    if (message.content !== "=que") return message.reply("Wrong command, try: =que!");
+   // if (message.content !== "=que") return message.reply("Wrong command, try: =que!");
     if (player !== []) {
 
       if (player[0].inQue == 2) {
