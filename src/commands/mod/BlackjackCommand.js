@@ -25,7 +25,7 @@ module.exports = class BlackjackCommand extends BaseCommand {
       c = addCard(c);
      
      // embeded message template
-     let exampleEmbed = new Discord.MessageEmbed()
+     let exampleEmbed = new Discord.MessageEmbed()    j
      .setColor('#0099ff')
      .setTitle('Blackjack')
      

@@ -21,7 +21,7 @@ module.exports = class HistoryCommand extends BaseCommand {
     if (numberOfGamesToShow > 10) return message.reply("Da cam multe vrei sa vezi!");
 
     let user_playing = author.id;
-    const player = await cmdMongo.searchUserCommand(user_playing);
+    const player = await cmdMongo.getUserById(user_playing);
 
     let history = await cmdMongo.searchGameByPlayer(player)
 
