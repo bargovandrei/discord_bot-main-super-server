@@ -1,7 +1,5 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
 const userSchema = require("../../schemas/user");
-const gamesSchema = require("../../schemas/games");
-const mongo = require('../../utils/mongo');
 const cmdMongo = require('./cmd')
 const constants = require('./../../utils/structures/constants')
 
@@ -17,7 +15,6 @@ const {
 const Discord = require('discord.js');
 const user = require('../../schemas/user');
 const prefix = "*";
-cmdMongo.setURL("mongodb+srv://andreiB:336529Ab.@cluster0.2nx6d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
 module.exports = class QueCommand extends BaseCommand {
   constructor() {
@@ -42,28 +39,28 @@ module.exports = class QueCommand extends BaseCommand {
     if (argument == 'cancel') {
 
       if (player[0].inQue == 0) {
-        message.channel.send("You are already out from que!")
+        message.channel.send("You are already out of que!")
         return
       } else {
         await cmdMongo.updateQueStatus(player, 0);
 
-        message.channel.send("La revedere!")
+        message.channel.send("Bye bye!")
         return
       }
 
     }
-    if(parseInt(argument)>10 || parseInt(argument)<2 ||argument==undefined){
+
+    if(parseInt(argument)>10 || parseInt(argument)<2 || argument==undefined){
       argument = 2;
     }
     if(argument!== null){
       message.channel.send("Que length: " + argument)
     }
 
-   // if (message.content !== "=que") return message.reply("Wrong command, try: =que!");
     if (player !== []) {
 
       if (player[0].inQue == 2) {
-        message.channel.send(message.author.username + " you can`t join in que while you are in a game!")
+        message.channel.send(message.author.username + ", you can`t join que while you are in a game!")
       } else if (player[0].inQue !== 1) {
         await userSchema.updateOne({
           _id: user_playing
@@ -73,7 +70,7 @@ module.exports = class QueCommand extends BaseCommand {
         message.reply(message.author.username + " in que!")
         searchgame = 1;
       } else {
-        message.reply(" you are already in que!")
+        message.reply("You are already in que!")
         searchgame = 1;
       }
       if (searchgame == 0) return

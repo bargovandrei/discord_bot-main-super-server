@@ -1,5 +1,6 @@
 let ranksMap = new Map();
-let rank_set = [-11,-9,-6,-3,1,2,3,4,10,11,12,13,14,15,16,17,20,22,24,26,30,34,38,42]
+let rank_set = [-11,-9,-6,-3,1,2,3,4,10,11,12,13,14,15,16,17,20,22,24,26,30,34,38,42];
+
 ranksMap.set(-11, "IRON IV");
 ranksMap.set(-9, "IRON III");
 ranksMap.set(-6, "IRON II");

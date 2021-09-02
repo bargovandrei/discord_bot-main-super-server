@@ -24,11 +24,11 @@ module.exports = class RegisterCommand extends BaseCommand {
     if (user.length !==0) return message.reply("You are already registered!");
 
     //check if lolNickname specified
-    if (!lolNickname) return message.channel.send('You did not specify your lol nickname!');
+    if (!lolNickname) return message.channel.send("You did not specify your lol nickname!");
 
     //add user
     cmdMongo.createUser(author, guild, lolNickname);
-    message.channel.send(message.author.username + " Just registered!");
+    message.channel.send(message.author.username + " just registered!");
 
   }
 }

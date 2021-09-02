@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const userSchema = require("../../schemas/user");
 const gamesSchema = require("../../schemas/games");
 const constants = require('./../../utils/structures/constants')
-var mongoUrl = "mongodb+srv://andreiB:336529Ab.@cluster0.2nx6d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 class MongoCmd {
 
