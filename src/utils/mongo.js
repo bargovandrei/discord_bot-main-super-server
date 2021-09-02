@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongoPath = "mongodb+srv://andreiB:336529Ab.@cluster0.2nx6d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const mongoPath = "mongodb+srv://andreiB:336529Ab.@cluster0.2nx6d.mongodb.net/betaSuperServer?retryWrites=true&w=majority"
 
 module.exports ={
     init: () =>{

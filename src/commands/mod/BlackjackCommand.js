@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 //const client = new Discord.Client();
 const userSchema = require("../../schemas/user");
 const mongo = require('../../utils/mongo');
-const prefix = "=";
+const prefix = "*";
 
 module.exports = class BlackjackCommand extends BaseCommand {
   constructor() {

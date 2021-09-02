@@ -16,7 +16,7 @@ const {
 
 const Discord = require('discord.js');
 const user = require('../../schemas/user');
-const prefix = "=";
+const prefix = "*";
 cmdMongo.setURL("mongodb+srv://andreiB:336529Ab.@cluster0.2nx6d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 
 module.exports = class QueCommand extends BaseCommand {
@@ -36,7 +36,7 @@ module.exports = class QueCommand extends BaseCommand {
     let searchgame = 0;
    
     let user_playing = author.id;
-    const player = await cmdMongo.getUserById(user_playing);
+    const player = await cmdMongo.searchUserCommand(user_playing);
     if (player.length ==0) return message.reply("You need to be registered to use this command!");
     
     if (argument == 'cancel') {

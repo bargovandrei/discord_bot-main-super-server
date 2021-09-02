@@ -15,8 +15,8 @@ module.exports = class StatsCommand extends BaseCommand {
       author
     } = message;
 
-    if(message.content!="=stats") return message.channel.send('do you mean stats?');
-    const user = await cmdMongo.getUserById(author.id)
+    if(message.content!="*stats") return message.channel.send('do you mean stats?');
+    const user = await cmdMongo.searchUserCommand(author.id)
     if (user.length ==0) return message.reply("You need to be registered to use this command!");
     let winRate = (user[0].wins / (user[0].loses + user[0].wins)) *100
     winRate = (Math.round(winRate * 100) / 100).toFixed(2);

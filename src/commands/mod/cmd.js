@@ -61,7 +61,7 @@ class MongoCmd {
         return user
     }
 
-    static async getUserById(author_id) {
+    static async searchUserCommand(author_id) {
         const user = await userSchema.find({
             _id: author_id
         });

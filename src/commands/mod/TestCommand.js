@@ -14,7 +14,7 @@ module.exports = class TestCommand extends BaseCommand {
       author
     } = message;
 
-    const user = await cmdMongo.getUserById("228856525559562240")
+    const user = await cmdMongo.searchUserCommand("228856525559562240")
     let winRate = (user[0].wins / (user[0].loses + user[0].wins)) *100
     winRate = (Math.round(winRate * 100) / 100).toFixed(2);
     console.log("winRate", winRate);

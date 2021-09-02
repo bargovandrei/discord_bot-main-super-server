@@ -1,5 +1,7 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
-const prefix = "=";
+const userSchema = require("../../schemas/user");
+const mongo = require('../../utils/mongo');
+const prefix = "*";
 const cmdMongo = require('./cmd')
 
 module.exports = class RegisterCommand extends BaseCommand {
@@ -17,9 +19,9 @@ module.exports = class RegisterCommand extends BaseCommand {
 
     let lolNickname = args[1];
 
-    // check if user is registered
-    const user = await cmdMongo.getUserById(author.id)
-    if (user.length !== 0) return message.reply("You are already registered!");
+    // check if user is registerd
+    const user = await cmdMongo.searchUserCommand(author.id)
+    if (user.length !==0) return message.reply("You are already registered!");
 
     //check if lolNickname specified
     if (!lolNickname) return message.channel.send('You did not specify your lol nickname!');

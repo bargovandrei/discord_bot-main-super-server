@@ -1,7 +1,7 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
 const Discord = require('discord.js');
 const cmdMongo = require('./cmd')
-const prefix = "=";
+const prefix = "*";
 const constants = require('./../../utils/structures/constants')
 /*
 =ranks (win)

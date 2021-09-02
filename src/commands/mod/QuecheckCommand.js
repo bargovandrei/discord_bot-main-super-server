@@ -1,6 +1,6 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
 const cmdMongo = require('./cmd')
-const prefix = "=";
+const prefix = "*";
 
 
 module.exports = class QuecheckCommand extends BaseCommand {
